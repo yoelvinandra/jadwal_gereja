@@ -1,0 +1,5 @@
+---
+deployment:
+tasks:
+- export DEPLOYPATH=/home/vars6491/public_html/jadwal_gereja/
+- /bin/cp -r * $DEPLOYPATH
