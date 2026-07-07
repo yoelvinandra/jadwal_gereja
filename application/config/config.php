@@ -26,7 +26,11 @@ date_default_timezone_set("Asia/Jakarta");
 |
 */
 
-$config['base_url'] = 'https://anugerahsulung.my.id';
+// Mengatur protokol (http atau https) secara otomatis
+$protoname = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? "https://" : "http://";
+
+// Menggabungkan protokol dengan nama server/domain yang sedang diakses
+$config['base_url'] = $protoname . $_SERVER['HTTP_HOST'] . str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
 
 /*
 |--------------------------------------------------------------------------
